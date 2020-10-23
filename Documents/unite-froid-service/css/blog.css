@@ -1,0 +1,100 @@
+.bg-dark{
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.position-static{
+    position: static;
+}
+
+.border-none{
+    border-radius: 0;
+}
+
+.rounded{
+    border-radius: 10px !important;
+}
+
+.flex-justify-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.mt-1{
+    margin-top: .8em;
+}
+
+label{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+
+label.btn-primary{
+    margin: .6em 1.5em;
+    /* border-radius: 0; */
+}
+
+.mobil-bank{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bank-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-box{
+    position: relative;
+    overflow: hidden;
+}
+
+.lock{
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    background-color: rgba(44, 91, 235, 0.664);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+}
+
+.lock i {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.lock i:hover{
+    color: #dddcdc;
+}
+
+.bonus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.bonus .bonus-content p{
+    font-size: .8em;
+}
+
+/* Correctif */
+/* .btn.btn-primary:active{
+    border: none;
+    outline: none;
+} */
+
+.modal-dialog{
+    z-index: 999 !important;
+}
+
+.header{
+    z-index: 1;
+}
