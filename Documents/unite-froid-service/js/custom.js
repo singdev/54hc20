@@ -1,30 +1,51 @@
-  (function($) {
-    "use strict";
-        $('.site-header').affix({
-          offset: {
-            top: 100,
-            bottom: function () {
-              return (this.bottom = $('.footer').outerHeight(true))
-            }
-          }
-        })
+$(function() {
+  // navbar background change on scroll
+  $(window).scroll(function() {
+    var scrolling = $(this).scrollTop();
+    if (scrolling > 5) {
+      $(".navbar").addClass("scroll-bg");
+    } else {
+      $(".navbar").removeClass("scroll-bg");
+    }
+  });
 
-        function count($this){
-          var current = parseInt($this.html(), 10);
-              current = current + 1; /* Where 50 is increment */  
-              $this.html(++current);
-                  if(current > $this.data('count')){
-                      $this.html($this.data('count'));
-                  } else {    
-                      setTimeout(function(){count($this)}, 50);
-                  }
-              }           
-              $(".stat-count").each(function() {
-                $(this).data('count', parseInt($(this).html(), 10));
-                $(this).html('0');
-          count($(this));
-        });
+  // scroll animantion
+  var html_body = $("html, body");
+  $("a.nav-link").on("click", function() {
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      if (target.length) {
+        html_body.animate(
+          {
+            scrollTop: target.offset().top - 50
+          },
+          1500,
+          "easeInOutCubic"
+        );
+        return false;
+      }
+    }
+  });
 
-        $('[data-toggle="tooltip"]').tooltip();
-        
-  })(jQuery);
+  // counter active
+  $(".counter").counterUp({
+    delay: 10,
+    time: 10000
+  });
+
+  // back to top animation
+  var bc2top = $(".back-to-top-btn");
+  bc2top.on("click", function() {
+    html_body.animate(
+      {
+        scrollTop: 0
+      },
+      2500
+    );
+  });
+});
